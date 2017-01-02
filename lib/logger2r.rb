@@ -18,6 +18,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require "logger2r/version"
+require "logger"
 
 module Logger2r
+  def self.for_class_with_level(class_name, severity_level)
+    logger = ::Logger.new(STDOUT)
+    logger.progname = class_name
+    logger.level = severity_level
+    logger
+  end
 end
