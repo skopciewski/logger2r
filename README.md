@@ -49,6 +49,15 @@ class MyClass
 end
 ```
 
+## Configuration
+
+Each configuration block for specific class may contain:
+
+`severity_level` - symbol, :debug < :info < :warn < :error < :fatal < :unknown
+`device` - string, `stdout`, `stderr`, `ClassName` or `file path`
+`datetime_format` - string
+`formatter_class` - string, `ClassName`
+
 ## Versioning
 
 See [semver.org][semver]
