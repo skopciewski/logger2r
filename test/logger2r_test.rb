@@ -48,12 +48,12 @@ class Logger2rTest < Minitest::Test
 
   def test_that_it_returns_logger_with_default_dateformat
     logger = ::Logger2r.for_class("ClassName")
-    assert_equal nil, logger.datetime_format
+    assert_nil logger.datetime_format
   end
 
   def test_that_it_returns_logger_with_default_formatter
     logger = ::Logger2r.for_class("ClassName")
-    assert_equal nil, logger.formatter
+    assert_nil logger.formatter
   end
 
   def test_that_it_returns_logger_with_right_progname
