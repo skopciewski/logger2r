@@ -1,3 +1,7 @@
+=== 1.0.2 (2017.01.04)
+
+* update tests
+
 === 1.0.1 (2017.01.04)
 
 * fix travis config
