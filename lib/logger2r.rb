@@ -40,8 +40,12 @@ module Logger2r
 
     private
 
+    def config_from_file?
+      defined?(@config_file) && !@config_file.nil?
+    end
+
     def get_config_for_class(class_name)
-      config_form_file = @config_file.nil? ? {} : YAML.load_file(@config_file)
+      config_form_file = config_from_file? ? YAML.load_file(@config_file) : {}
       config_form_file = config_form_file.fetch(:logger2r_config, {})
       config_for_all_classes = config_form_file.fetch(:default, {})
       config_for_class = config_form_file.fetch(class_name.to_sym, {})
