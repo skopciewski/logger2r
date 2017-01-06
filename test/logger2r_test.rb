@@ -21,6 +21,9 @@ class Logger2rTest < Minitest::Test
           device: "stdout",
           datetime_format: "%y-%m-%d",
           formatter_class: "TestFormatter"
+        },
+        ClassBar: {
+          device: "StringIO"
         }
       }
     }
@@ -84,5 +87,11 @@ class Logger2rTest < Minitest::Test
     logger = ::Logger2r.for_class("Module::ClassFoo")
     expect = "#{Time.now.strftime("%y-%m-%d")} - msg"
     assert_equal expect, logger.formatter.call("INFO", Time.now, "prog", "msg")
+  end
+
+  def test_that_logger_device_can_be_overwritten_by_class_config
+    ::Logger2r.config_file = TestHelper::Store::CONFIG_PATH
+    logger = ::Logger2r.for_class("ClassBar")
+    assert_equal StringIO, logger.instance_variable_get("@logdev").dev.class
   end
 end

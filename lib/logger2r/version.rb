@@ -18,5 +18,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 module Logger2r
-  VERSION = "1.0.4".freeze
+  VERSION = "1.0.5".freeze
 end
