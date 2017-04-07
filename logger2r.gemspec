@@ -1,9 +1,9 @@
-# coding: utf-8
+# frozen_string_literal: true
 
 begin
   require "./lib/logger2r/version"
 rescue LoadError
-  module Logger2r; VERSION = "0".freeze; end
+  module Logger2r; VERSION = "0"; end
 end
 
 Gem::Specification.new do |spec|
