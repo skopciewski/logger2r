@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 require "test_helper"
 require "logger2r"
 
 class TestFormatter < Logger::Formatter
-  Format = "%s - %s".freeze
+  Format = "%s - %s"
   def call(_severity, time, _progname, msg)
     Format % [format_datetime(time), msg2str(msg)]
   end
@@ -16,7 +17,7 @@ class Logger2rTest < Minitest::Test
           severity_level: :info,
           device: nil
         },
-        :"Module::ClassFoo" => {
+        "Module::ClassFoo": {
           severity_level: :warn,
           device: "stdout",
           datetime_format: "%y-%m-%d",
