@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/logger2r.svg)](http://badge.fury.io/rb/logger2r)
 [![Code Climate](https://codeclimate.com/github/skopciewski/logger2r/badges/gpa.svg)](https://codeclimate.com/github/skopciewski/logger2r)
+[![Dependency Status](https://gemnasium.com/badges/github.com/skopciewski/logger2r.svg)](https://gemnasium.com/github.com/skopciewski/logger2r)
 
 Wrapper class for rubby Logger. Allow to initialize the Logger class for specific progname, and configure it based on yaml config. Inspired by Log4r's yamlconfigurator.
 
@@ -51,7 +52,7 @@ end
 
 ## Configuration
 
-Each configuration block for specific class may contain:
+Each configuration block for specific class may contains
 
 `severity_level` - symbol, :debug < :info < :warn < :error < :fatal < :unknown
 `device` - string, `stdout`, `stderr`, `ClassName` or `file path`
